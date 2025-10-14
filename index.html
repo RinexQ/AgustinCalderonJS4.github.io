@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 04 - Rango válido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 350px;
+      margin: auto;
+    }
+
+    .card h3 {
+      background-color: #e6f0ff;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ejercicio 04: ¿Dentro de los rangos válidos?</h2>
+    <div class="card">
+      <h3>📘 Instrucciones</h3>
+      <p>Ingresa un número y verifica si está en los rangos válidos.</p>
+      <p>Rangos válidos: 100 a 300 ó 500 a 800.</p>
+      <input type="number" id="numero" placeholder="Escribe un número">
+      <button onclick="verificarRango()">✔️ Verificar Rango</button>
+      <p id="resultado"></p>
+    </div>
+  </div>
+
+  <script>
+    function verificarRango() {
+      let num = document.getElementById("numero").value;
+      let resultado = document.getElementById("resultado");
+
+      if ((num >= 100 && num <= 300) || (num >= 500 && num <= 800)) {
+        resultado.textContent = `✅ El valor ${num} está dentro de los rangos permitidos (100-300 o 500-800).`;
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = `❌ El valor ${num} está FUERA de los rangos válidos.`;
+        resultado.style.color = "red";
+      }
+
+      console.log("Número ingresado:", num);
+    }
+  </script>
+</body>
+</html>

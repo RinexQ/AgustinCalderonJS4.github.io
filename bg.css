@@ -1,0 +1,12 @@
+document.getElementById("btn").addEventListener("click", () => {
+  const valor = Number(document.getElementById("valor").value);
+  const resultado = document.getElementById("resultado");
+
+  if (valor >= 100 && valor <= 300) {
+    resultado.textContent = `✅ ¡Correcto! El valor ${valor} está DENTRO del rango 100-300.`;
+    resultado.className = "ok";
+  } else {
+    resultado.textContent = `❌ El valor ${valor} está FUERA del rango 100-300.`;
+    resultado.className = "error";
+  }
+});
